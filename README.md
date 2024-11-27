@@ -9,7 +9,7 @@ It supports chrome, firefox, and IE browser for local environment testing with a
 * Visual Studio
 
 # Get Started
-Git clone URL
+Git clone URL - https://github.com/Abrahamsf/FE_Assessment.git
 
 # Installation
 
