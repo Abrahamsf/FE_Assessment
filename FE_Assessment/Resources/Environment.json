@@ -1,0 +1,19 @@
+﻿{
+  "QA": {
+    "WebURL": "https://www.way2automation.com/angularjs-protractor/webtables/",
+    "BaseAPI": "192.0.0.0/baseurl",
+    "DataBaseURL": "192.0.0.0/DB"
+  },
+
+  "UAT": {
+    "WebURL": "",
+    "BaseAPI": "",
+    "DataBaseURL": ""
+  },
+
+  "PROD": {
+    "WebURL": "",
+    "BaseAPI": "",
+    "DataBaseURL": ""
+  }
+}

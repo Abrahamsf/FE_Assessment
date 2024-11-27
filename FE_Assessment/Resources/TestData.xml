@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+	<TestCase>
+		<TestCaseId>TC001_AddFirstUser</TestCaseId>
+		<FirstName>FName1</FirstName>
+		<LastName>LName1</LastName>
+		<Username>User1</Username>
+		<Password>Pass1</Password>
+		<Customer>Company AAA</Customer>
+		<Role>Admin</Role>
+		<Email>admin@mail.com</Email>
+		<Cell>082555</Cell>
+	</TestCase>
+
+	<TestCase>
+		<TestCaseId>TC002_AddSecondUser</TestCaseId>
+		<FirstName>FName2</FirstName>
+		<LastName>LName2</LastName>
+		<Username>User2</Username>
+		<Password>Pass2</Password>
+		<Customer>Company BBB</Customer>
+		<Role>Customer</Role>
+		<Email>customer@mail.com</Email>
+		<Cell>083444</Cell>
+	</TestCase>
+</TestCases>
