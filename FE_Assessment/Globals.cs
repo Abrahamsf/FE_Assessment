@@ -1,7 +1,4 @@
-﻿
-using AventStack.ExtentReports;
-using Newtonsoft.Json.Linq;
-using OpenQA.Selenium;
+﻿using Newtonsoft.Json.Linq;
 
 namespace FE_Assessment
 {

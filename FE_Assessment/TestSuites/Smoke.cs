@@ -1,9 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using NUnit.Framework;
-using FE_Assessment.Pages;
 using FE_Assessment.Utility;
 using FE_Assessment.Actions;
-using static FE_Assessment.Globals;
 using Newtonsoft.Json.Linq;
 
 namespace FE_Assessment.TestSuites

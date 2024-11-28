@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace FE_Assessment.Pages
+﻿namespace FE_Assessment.Pages
 {
     public static class HomePage
     {

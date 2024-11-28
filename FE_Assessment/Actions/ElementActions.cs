@@ -1,9 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using static System.Net.Mime.MediaTypeNames;
-using static FE_Assessment.Globals;
 
 namespace FE_Assessment.Actions
 {

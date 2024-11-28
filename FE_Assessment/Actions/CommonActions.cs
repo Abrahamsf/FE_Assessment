@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading;
-using AventStack.ExtentReports;
+﻿using AventStack.ExtentReports;
 using FE_Assessment.Pages;
-using static FE_Assessment.Globals;
 
 namespace FE_Assessment.Actions
 {
