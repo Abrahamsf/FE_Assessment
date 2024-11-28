@@ -1,5 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using FE_Assessment.Pages;
+using OpenQA.Selenium;
 
 namespace FE_Assessment.Actions
 {
@@ -8,7 +9,7 @@ namespace FE_Assessment.Actions
         private static long lastTimeStamp = DateTime.UtcNow.Ticks;
 
         //Actions
-        public static void AddUser_Action(OpenQA.Selenium.IWebDriver driver, ExtentTest node, Newtonsoft.Json.Linq.JToken? testData)
+        public static void AddUser_Action(IWebDriver driver, ExtentTest node, Newtonsoft.Json.Linq.JToken? testData)
         {
             var newnode = node.CreateNode("Add User");
 
@@ -41,15 +42,22 @@ namespace FE_Assessment.Actions
 
             ElementActions.InputText(driver, HomePage.email_input, testData["Email"].ToString(), newnode, "Email Textbox");
             ElementActions.InputText(driver, HomePage.cellphone_input, testData["Cell"].ToString(), newnode, "Cell Phone Textbox");
+
+            //Add Screenshot to Report
+            AddScreenshot(driver, newnode, "Add User Screen");
+
             ElementActions.Click(driver, HomePage.save_btn, newnode, "Save Button");
         }
 
-        public static void Search_Action(OpenQA.Selenium.IWebDriver driver, ExtentTest node, string search_txt)
+        public static void Search_Action(IWebDriver driver, ExtentTest node, string search_txt)
         {
             var newnode = node.CreateNode("Search");
 
             ElementActions.InputText(driver, HomePage.search_input, search_txt, newnode, "Search Textbox");
             ElementActions.VerifyElementExist(driver, "//tr/td[contains(.,'" + search_txt + "')]", newnode, "First Name table data");
+
+            //Add Screenshot to Report
+            AddScreenshot(driver, newnode, "Searched Screen");
         }
 
         //Common Actions
@@ -69,6 +77,20 @@ namespace FE_Assessment.Actions
                 return newValue.ToString();
             }
         }
-        
+
+        public static void AddScreenshot(IWebDriver driver, ExtentTest newnode, string text)
+        {
+            string Filename = "Screenshot_" + GetUniqueTimestamp + ".png";
+            newnode.Log(Status.Pass, text, CaptureScreenShot(driver, Filename));
+        }
+
+        public static AventStack.ExtentReports.Model.Media CaptureScreenShot(IWebDriver driver, string screenShotName)
+        {
+            ITakesScreenshot scr = (ITakesScreenshot)driver;
+            var screenshot = scr.GetScreenshot().AsBase64EncodedString;
+
+            return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot, screenShotName).Build();
+        }
+
     }
 }

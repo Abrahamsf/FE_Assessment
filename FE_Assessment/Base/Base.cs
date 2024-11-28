@@ -44,6 +44,9 @@ namespace AventStack.ExtentReports
             //Navigate to URL
             ElementActions.NavigateToUrl(driver.Value, url, add_btn, node);
             driver.Value.Manage().Window.Maximize();
+
+            //Add Screenshot to Report
+            CommonActions.AddScreenshot(GetDriver(), node, "Initial Screen");
         }
 
         public IWebDriver GetDriver()
@@ -83,7 +86,7 @@ namespace AventStack.ExtentReports
                 var stackTrace = TestContext.CurrentContext.Result.StackTrace;
                 DateTime date = DateTime.Now;
                 string Filename = "Screenshot_" + date.ToString("h_mm_ss") + ".png";
-                extent_test?.Value?.Fail("TestCase Status : Failed", CaptureScreenShot(driver.Value, Filename));
+                extent_test?.Value?.Fail("TestCase Status : Failed", CommonActions.CaptureScreenShot(driver.Value, Filename));
                 extent_test?.Value?.Fail(stackTrace);
             }
             else if (status == TestStatus.Passed)
@@ -93,15 +96,6 @@ namespace AventStack.ExtentReports
             extent.Flush();
             driver.Value.Quit();
         }
-
-        public static Model.Media CaptureScreenShot(IWebDriver driver, string screenShotName)
-        {
-            ITakesScreenshot scr = (ITakesScreenshot)driver;
-            var screenshot = scr.GetScreenshot().AsBase64EncodedString;
-
-            return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot, screenShotName).Build();
-        }
-
     }
 }
 

@@ -50,7 +50,8 @@ It will execute testcase in parllel method.
 
 # Report
 * An extent report is used to generate the report. Once execution is completed, navigate to the Reports folder, right-click on index.html file and open it with the respective system browser.
-I have done an execution of the tests so the results of that will be stored in index_2.html as index.html will be overwritten with the next execution.
+* I have done an execution of the tests so the results of that will be stored in index_2.html as index.html will be overwritten with the next execution.
+* I have added screenshots to each action within the report for better clarity.
 
 # NUnit
 * NUnit is being utilised to as a testing framework, it makes identifying and executing test cases simpler.
